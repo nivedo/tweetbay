@@ -1,0 +1,9 @@
+.form-wrapper
+  .form-info
+    %h1 Welcome Back!
+
+  = form_tag(sessions_path, :url => { :action => "create" }, :class => 'form-fields' ) do
+    %fieldset
+      = email_field_tag :email, nil, :placeholder => "Email", :class => "req"
+      = password_field_tag :password, nil, :placeholder => "Password", :class => "req"
+    = submit_tag "Sign In", :class => "submit"

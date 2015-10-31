@@ -1,0 +1,14 @@
+.box-wrapper
+  .avatar
+    = image_tag avatar_url(content.user), :class => "user-icon"
+  .summary-content
+    .text-line
+      .line-name
+        %span.passive-text #{content.user.nickname}
+        %span.time-text &#183; #{time_ago_in_words(content.created_at)} ago
+      %h2
+        = link_to content.title, content_url(content.id)
+    #{markdown( condenseString content.description)}
+    - if strip_tags( markdown content.description ).length > 300
+      .read-more
+        = link_to "Read more...", content_url(content.id)

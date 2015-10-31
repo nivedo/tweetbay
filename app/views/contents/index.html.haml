@@ -1,0 +1,7 @@
+%input{:id => "post_box", :type => "checkbox"}
+.post-box
+  .post-wrapper
+    = render :partial => 'contents/post'
+
+- @contents.each do |content|
+  = render "summary", :content => content

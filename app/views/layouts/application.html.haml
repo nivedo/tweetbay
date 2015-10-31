@@ -1,0 +1,63 @@
+!!! 5
+%html
+  %head
+    %title tweetbay
+
+    - if @splash_page
+      = stylesheet_link_tag "splash", 'data-turbolinks-track' => true
+    - else
+      = stylesheet_link_tag "application", :media => "all"
+
+    = javascript_include_tag "application"
+    //= javascript_include_tag params[:controller]
+    - if @splash_page
+      %script{:src => "//use.typekit.net/kgt1tta.js", :type => "text/javascript"}
+      :javascript
+        try{Typekit.load();}catch(e){}
+    = csrf_meta_tags
+
+    %meta{:name => "description", :content => ""}
+    %meta{:name => "HandheldFriendly", :content => "True"}
+    %meta{:name => "MobileOptimized", :content => "320"}
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1"}
+    %meta{:content => "yes", :name => "apple-mobile-web-app-capable"}
+
+  %body
+    - if @splash_page
+      = yield
+
+    - else
+      = render 'shared/nav'
+      .main-wrap
+        = yield
+
+    - if false # This is old code
+      .outer-wrap.margin3.col8.pad4
+        .inner-wrap
+          - if !flash[:notice].nil?
+            .notice-container
+              .notice-msg.info-msg #{flash[:notice]}
+          - if !flash[:success].nil?
+            .notice-container
+              .notice-msg.success-msg #{flash[:success]}
+          - if !flash[:alert].nil?
+            .notice-container
+              .notice-msg.info-msg #{flash[:alert]}
+          //- if @title
+          //  .title-wrapper
+          //    %h1 #{@title}
+
+          .content-wrapper
+            //.sidebar
+            //  = render 'shared/sidebar'
+            .main-content
+              - if @title && @embed_post_link
+                .main-title
+                  %span.left #{@title}
+                  - if @embed_post_link
+                    %label{:for => "post_box"}
+                      %img{:src => asset_path("compose_turq.png")}
+                      %span #{@embed_post_link}
+              = yield
+        - if @show_reply
+          .push

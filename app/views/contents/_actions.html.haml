@@ -1,0 +1,21 @@
+.content-actions
+  %ul
+    
+    
+    - if content.children.length > 0
+      %li #{@content.children.length} Comments
+    
+    
+    - if content.permitted_actions(current_user).include?(:edit)
+      %li
+        = link_to "Edit", edit_content_url(content.id), 'data-no-turbolink' => true
+    - if content.permitted_actions(current_user).include?(:delete)
+      %li
+        = link_to "Delete", content_url(content.id), :method => :delete, :remote => true
+    - if content.permitted_actions(current_user).include?(:thank)
+      %li
+        = link_to "Thank", root_url, :class => "soft"
+    - if content.permitted_actions(current_user).include?(:report)
+      %li
+        = link_to "Report", root_url, :class => "soft"
+    

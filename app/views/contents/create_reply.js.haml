@@ -1,0 +1,5 @@
+$('.comments-inner').append("#{j(render('comment', content: @content))}");
+
+$('#comment_#{@content.id}').hide().fadeIn(500);
+
+$('#reply_field').val("");

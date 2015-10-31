@@ -1,0 +1,22 @@
+.embed-wrapper
+  = form_for(@content, :html => { :class => 'embed-fields' }) do |f|
+    %fieldset
+      = f.text_field :title, :placeholder => "I want to sell...", :class => "req"
+      = f.hidden_field :parent_id
+      
+      = f.text_area :description, :placeholder => "What are you selling and why is it awesome?", :class => "req", :rows => "6"
+    .button-wrapper
+      
+      
+      -#
+        .file-input-wrapper
+          %button.btn-file-input
+            = image_tag("w_photo.png")
+          = f.file_field :file
+      
+      
+      = f.submit "Post", :class => "submit"
+-#
+  = direct_upload_form_for @uploader do |f|
+    = f.file_field :attachment
+    = f.submit "Upload Image"

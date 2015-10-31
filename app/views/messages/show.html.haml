@@ -1,0 +1,8 @@
+.chat-container
+  = render partial: "contents/chatbox", locals: { content: @message.content }
+
+  .chat-inner
+    - @message.content.children.each do |c|
+      = render partial: "contents/chatbox", locals: { content: c }
+
+= render partial: "contents/chatreply"

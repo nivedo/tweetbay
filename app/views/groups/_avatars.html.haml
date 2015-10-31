@@ -1,0 +1,9 @@
+- if members.length > 1
+  .avatar
+    .first
+      = image_tag avatar_url(members.first), :class => "user-icon"
+    .second
+      = image_tag avatar_url(members.last), :class => "user-icon"
+- else
+  .avatar
+    = image_tag avatar_url(members.first), :class => "user-icon"

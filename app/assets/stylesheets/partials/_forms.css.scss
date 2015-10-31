@@ -1,0 +1,510 @@
+.add-product-wrap {
+  margin: 0 auto;
+  margin-top: 35px;
+  text-align: center;
+
+  width: 480px;
+  height: 510px;
+  border: 1px solid darken(#e1e8ed, 5);
+  border-radius: 6px;
+
+  .input-image {
+    height: 200px;
+    width: 100%;
+    background-color: lighten(#e1e8ed, 5);
+    border-bottom: 1px solid darken(#e1e8ed, 5);
+    font-weight: 500;
+    line-height: 200px;
+    color: #888;
+  }
+
+  .dropzone {
+    height: 200px;
+    width: 100%;
+    background-color: lighten(#e1e8ed, 5);
+    border: none;
+    border-bottom: 1px solid darken(#e1e8ed, 5);
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    font-weight: 500;
+    line-height: 100px;
+    color: #888;
+
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    .dz-message {
+      margin-top: 50px;
+    }
+
+    .camera-icon {
+      margin: 0 auto;
+      margin-bottom: -30px;
+      width: 30px;
+      height: 30px;
+      background-size: 100% auto;
+      background-image: image-url("photo.svg");
+    }
+
+    .dz-preview.dz-image-preview {
+      background-color: lighten(#e1e8ed, 5);
+    }
+
+    .dz-image, .dz-details {
+      display: none;
+    }
+
+    .dz-progress {
+      background: white;
+      width: 478px;
+      margin-left: -239px;
+      height: 4px;
+      border-radius: 0px;
+      margin-top: 109px;
+      .dz-upload {
+        background: $accent-color;
+        //background: linear-gradient(to bottom, #ebe, #111);
+      }
+    }
+  }
+}
+
+a.button {
+  display:block;
+  font-weight: 500;
+  height: 100%;
+  width: 100%;
+  line-height: 45px;
+  text-decoration: none;
+  background-color: $accent-color;
+  border-radius: 6px;
+  text-align: center;
+
+  margin: 0 auto;
+  margin-top: 30px;
+  text-decoration: none;
+  color: white;
+  width: 120px;
+
+  &:active {
+    position: relative;
+    top: 1px;
+  }
+}
+
+.input-row {
+  @include clearfix;
+  width: 100%;
+  border-bottom: 1px solid darken(#e1e8ed, 5);
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  input {
+    width: 95%;
+    border: none;
+    height: 50px;
+    padding-left: 0.5em;
+    outline: none;
+    color: #333;
+  }
+
+  input[type=number]::-webkit-inner-spin-button, 
+  input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+  }
+
+  .dollar {
+    font-size: 1em;
+    font-weight: 300;
+    font-family: Arial;
+  }
+
+  .price {
+    width: 82%;
+  }
+
+  textarea {
+    height: 250px;
+    width: 100%;
+    padding: 1em 1em;
+    outline: none;
+    border: none;
+    color: #333;
+
+    &:focus {
+      //background-image: none;
+    }
+  }
+
+  .title {
+    font-weight: 500;
+  }
+}
+
+.col1 {
+  float: left;
+  width: 22%;
+}
+
+.col3 {
+  float: left;
+  width: 78%;
+}
+
+// THIS IS OLD STUFF //
+
+.form-wrapper {
+  margin: 0 auto;
+  display: block;
+}
+
+.form-info {
+  // Align with fieldset
+  //margin: 0 2px;
+  //padding: 0.35em 0.625em 0.75em;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+.form-fields {
+  // Disable "zoom-in" effect
+  font-size: 1.6rem;
+
+  fieldset {
+    border: none;
+  }
+
+  input:not([type="checkbox"]), select, textarea {
+    @extend .block;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: #fff;
+
+    border-radius: $default-radius;
+    border: 2px solid $light-gray;
+    padding: 10px 2%;
+
+    width: 96%;
+    margin: 0px auto;
+    margin-bottom: 10px;
+
+    &:focus {
+      //box-shadow: 0 0 5px rgba(darken($accent-color,10),0.5);
+      border: 2px solid rgba($accent-color,0.9);
+      outline: 0;
+    }
+
+    // Chrome is stupid
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0px 1000px white inset;
+    }
+  }
+
+  textarea {
+    min-height: 8em;
+    resize: none; 
+  }
+
+  input[type="submit"] {
+    @extend .block;
+    padding: 10px 2%;
+    width: 100%;
+    margin: 0px auto;
+
+    max-width: 250px;
+    margin-bottom: 15px;
+
+    border-radius: $default-radius;
+    background-color: $accent-color;
+    border: 0;
+    transition: background-color 0.1s;
+
+    color: white;
+    font: {
+      family: $font-default, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      size: 1.2em;
+    }
+
+    .no-touch &:hover {
+      background-color: darken($accent-color, 5);
+    }
+
+    &:active {
+      position: relative;
+      top: 1px;
+    }
+  }
+}
+
+.embed-wrapper {
+  background: $blue-white;
+  padding-top: 0.5em;
+  width: 100%;
+  //border-radius: $default-radius;
+}
+
+.embed-fields {
+  // Disable "zoom-in" effect
+  font-size: 1.6rem;
+
+  fieldset {
+    border: none;
+    margin: 0 auto;
+    max-width: 97%;
+    position: relative;
+  }
+
+  input:not([type="checkbox"]), select, textarea, ul {
+    &:first-child {
+      @include border-top-radius($default-radius);
+    }
+
+    &:last-child {
+      @include border-bottom-radius($default-radius);
+      border: 1px solid $border-gray;
+    }
+
+    font-weight: 300;
+
+    border: 1px solid $border-gray;
+    border-bottom: 0;
+
+    @include placeholder {
+      color: lighten($blue-gray,40);
+      font-weight: 300;
+    }
+
+    @extend .block;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: #fff;
+
+    padding: 10px 2%;
+
+    width: 96%;
+    margin: 0px auto;
+
+    &:focus {
+      //box-shadow: 0 0 5px rgba(darken($accent-color,10),0.5);
+      //border: 1px solid rgba($accent-color,0.8);
+      outline: 0;
+    }
+
+    // Chrome is stupid
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0px 1000px white inset;
+    }
+  }
+
+  textarea {
+    min-height: 8em;
+    resize: none; 
+  }
+
+  .button-wrapper {
+    height: 30px;
+    padding: 0.5em 0.5em;
+
+    .submit {
+      float: right;
+    }
+  }
+
+  .inset-label {
+    position: absolute;
+    top: 10px;
+    left: 0.7em;
+    font-weight: 300;
+
+    & + input {
+      //text-indent: 1.8em;
+    }
+  }
+
+  input[type="submit"] {
+    @extend .block;
+    padding: 8px 0;
+    max-width: 80px;
+    height: 30px;
+    margin: 0px auto;
+
+    border-radius: $default-radius;
+    background-color: $accent-color;
+    border: 0;
+    transition: background-color 0.1s;
+
+    color: white;
+    font-size: 0.8em;
+
+    .no-touch &:hover {
+      background-color: darken($accent-color, 5);
+    }
+
+    &:active {
+      position: relative;
+      top: 1px;
+    }
+  }
+}
+
+.inline-fields {
+  // Disable "zoom-in" effect
+  font-size: 1.6rem;
+
+  fieldset {
+    border: none;
+    max-width: 100%;
+  }
+
+  input:not([type="checkbox"]), select, textarea {
+    &:first-child {
+      @include border-top-radius($default-radius);
+    }
+
+    &:last-child {
+      @include border-bottom-radius($default-radius);
+      border-bottom: 1px solid $border-gray;
+    }
+
+    font-weight: 300;
+
+    @include placeholder {
+      color: lighten($blue-gray,40);
+      font-weight: 300;
+    }
+
+    @extend .block;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: #fff;
+
+    border: 1px solid $border-gray;
+    border-bottom: 0;
+    padding: 10px 2%;
+
+    width: 96%;
+    margin: 0px auto;
+
+    &:focus {
+      //box-shadow: 0 0 5px rgba(darken($accent-color,10),0.5);
+      //border: 1px solid rgba($accent-color,0.8);
+      outline: 0;
+    }
+
+    // Chrome is stupid
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0px 1000px white inset;
+    }
+  }
+
+  textarea {
+    min-height: 5em;
+    resize: none; 
+  }
+
+  .button-wrapper {
+    height: 30px;
+    padding: 0.5em 0;
+
+    .submit {
+      float: right;
+    }
+  }
+
+  input[type="submit"] {
+    @extend .block;
+    padding: 8px 0;
+    max-width: 80px;
+    height: 30px;
+    margin: 0px auto;
+
+    border-radius: $default-radius;
+    background-color: $accent-color;
+    border: 0;
+    transition: background-color 0.1s;
+
+    color: white;
+    font-size: 0.8em;
+
+    .no-touch &:hover {
+      background-color: darken($accent-color, 5);
+    }
+
+    &:active {
+      position: relative;
+      top: 1px;
+    }
+  }
+}
+
+// Embedded post box
+
+.post-box {
+  width: 100%;
+  margin-bottom: 10px;
+  display: none;
+}
+
+.edit-box {
+  width: 100%;
+  margin: 1em 0;
+}
+
+.post-wrapper {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+
+  height: 100%;
+
+  color: $blue-gray;
+}
+
+// File Input Styling
+
+.file-input-wrapper {
+    width: 50px;
+    height: 30px;
+    overflow: hidden;
+    position: relative;
+    float: left;
+}
+
+.file-input-wrapper > input[type="file"] {
+    font-size: 200px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+}
+
+.btn-file-input {
+  img {
+    margin-top: 2px;
+    height: 22px;
+    width: auto;
+  }
+}
+
+.file-input-wrapper > .btn-file-input {
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+    background-color: $accent-color;
+    border-radius: $default-radius;
+    color: #fff;
+    border: 0;
+}
+
+.file-input-wrapper:hover > .btn-file-input {
+    background-color: darken($accent-color, 10);
+}

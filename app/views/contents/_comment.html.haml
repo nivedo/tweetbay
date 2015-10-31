@@ -1,0 +1,13 @@
+.box-wrapper.comment
+  .avatar
+    = image_tag avatar_url(content.user), :class => "user-icon"
+  .summary-content{:id => "comment_" + content.id.to_s}
+    .text-line
+      .line-name
+        %span.passive-text 
+          = link_to content.user.nickname, user_url(content.user)
+        %span.time-text &#183; #{time_ago_in_words(content.created_at)} ago
+    #{markdown content.description}
+
+    - unless content.permitted_actions(current_user).empty?
+      = render "actions", :content => content

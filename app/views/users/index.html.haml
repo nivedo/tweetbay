@@ -1,0 +1,10 @@
+.directory
+  %ul
+    - @users.each do |user|
+      %li
+        .avatar
+          = image_tag avatar_url(user), :class => "user-icon"
+        .box-right
+          = link_to user.display_name, root_url
+          .user-info 
+            Unit #{user.unit_number}

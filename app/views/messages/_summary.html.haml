@@ -1,0 +1,13 @@
+.box-wrapper.message-wrapper
+  %a{:href => message_url(message.id)}
+    .clickable
+      = render partial: 'groups/avatars', locals: { members: recipients }
+      .summary-content
+        .time-text #{time_ago_in_words(content.created_at)} ago
+        .message-head
+          - recipients.each do |r|
+            %span{:class => recipients.length > 2 ? "three" : (recipients.length > 1 ? "two" : "") } #{r.first_name}
+        .text-line
+          .line-name
+            %span.passive-text #{content.user.first_name}: 
+            %span.message-text #{condenseString content.description}

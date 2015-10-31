@@ -1,0 +1,11 @@
+= render "box", :content => @content
+
+
+
+.comments-wrapper
+  - unless @content.children.nil?
+    .comments-inner
+      - @content.children.each do |child|
+        = render "comment", :content => child
+    = render "reply"
+

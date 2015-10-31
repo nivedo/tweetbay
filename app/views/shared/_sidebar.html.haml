@@ -1,0 +1,15 @@
+%section{:class => "fixed-sidebar col3"}
+
+  - if current_user
+    %nav.title
+      = link_to "Blub.io", root_url
+    %nav
+      = link_to "Discussions", root_url, :class => ( current_page?( root_url ) ? "active" : "") 
+      = link_to "Profile", root_url
+      = link_to "Sign Out", logout_url
+  - else
+    %ul
+      %li 
+        = link_to "Sign Up", new_user_url
+      %li 
+        = link_to "Log In", login_url

@@ -1,0 +1,121 @@
+
+// JARVIS Base CSS
+
+@function pem($px, $base: 16) {
+    @return ($px / $base) + em;
+}
+
+@mixin clearfix {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+  *zoom: 1;
+}
+
+@mixin accentlink {
+  a {
+    text-decoration: none;
+    color: $accent-color;
+      
+    &:hover {
+      color: darken($accent-color, 5);
+    }
+  }
+}
+
+// Colors
+
+$light-gray: #cdd4d8;
+$yeti-orange: #f1831e;
+$yeti-blue: #2e9fff;
+$error-red: #ff7e8a;
+$font-gray: #5d5d5d;
+$yeti-green: #dbefd8;
+
+$heyoo-pink: #e7515e;
+$heyoo-turq: #37C4B6;
+$heyoo-navy: #3c5166;
+$q-blue: #538dc2;
+$q-darkblue: #19558d;
+$map-blue: #3887be;
+$map-purple: #8a8acb;
+$embed-gray: #f8f8f8;
+
+$font-default: "proxima-nova";
+$header-font: "futura-pt";
+
+$off-white: #fcfcfc;
+$blue-white: #f1f4f6;
+$blue-gray: #546673;
+$border-gray: #e8eced;
+
+$border-gray: $blue-white;
+
+$off-white: #f9f9f9;
+
+$soft-gray: lighten($blue-gray,40);
+
+//$accent-color: $q-blue;
+$accent-color: #0392D9;
+
+// Sizes
+
+$side-padding: 20px;
+$navbar-height: 50px;
+
+$footer-height: 40px;
+
+$sidebar-width: 180px;
+
+$max-width: 940px;
+$max-read-width: 600px;
+$transition-width: 750px;
+
+$default-radius: 3px;
+
+// Extends
+
+.bold {
+  font-weight: bold;
+}
+
+.floatleft {
+  float: left;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.opaque {
+  opacity: 0;
+}
+
+.block {
+  display: block;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  min-width: pem(320);
+  background: white;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}

@@ -1,0 +1,97 @@
+*, *:after, *:before {
+  -webkit-box-sizing:border-box;
+     -moz-box-sizing:border-box;
+          box-sizing:border-box;
+}
+
+header {
+  margin: 0 auto;
+  width: 1000px;
+  height: 60px;
+
+  a {
+    display:block;
+    font-weight: 300;
+    height: 100%;
+    width: 100%;
+    line-height: 60px;
+    color: #444;
+    text-decoration: none;
+  }
+
+  .logo {
+    font-weight: 300;
+    float: left;
+    line-height: 60px;
+    font-size: 1.5em;
+    color: #444;
+  }
+
+  .right {
+    font-weight: 300;
+    float: right;
+    line-height: 60px;
+    color: #444;
+  }
+
+  .user-menu {
+    width: 250px;
+    .tiny-icon {
+      float: right;
+      width: 25px;
+      height: 25px;
+      border-radius: 4px;
+      margin-top: 16px;
+      margin-right: 0.5em;
+      //border: 3px solid darken(#e1e8ed,5);
+    }
+    a {
+      float: right;
+      width: 160px;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    width: 350px;
+    float: right;
+
+    li {
+      float: left;
+      padding-right: 2em;
+
+      a {
+        display:block;
+        font-weight: 500;
+        height: 100%;
+        width: 100%;
+        line-height: 60px;
+        color: #444;
+        text-decoration: none;
+
+        transition: color 0.2s ease;
+        &:hover {
+          color: $accent-color;
+        }
+      }
+    }
+
+    .button {
+      border: 2px solid $accent-color;
+      text-align: center;
+      border-radius: 6px;
+      padding: 0 10px;
+      height: 36px;
+      //height: 36px;
+      //width: 60px;
+      margin-top: 10px;
+      line-height: 38px;
+
+      transition: all 0.2s ease;
+      &:hover {
+        border: 1px solid $accent-color;
+      }
+    }
+  }
+}

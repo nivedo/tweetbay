@@ -1,0 +1,18 @@
+.form-wrapper
+  .form-info
+    %h1 New Post
+
+    .error-messages
+      - for message in @content.errors.full_messages
+        %p #{message}
+
+  = form_for(@content, :html => { :class => 'form-fields' }) do |f|
+    %fieldset
+      = f.text_field :title, :placeholder => "Title", :class => "req"
+      = f.hidden_field :parent_id
+      = f.file_field :attachment
+      = f.text_field :image_src, :placeholder => 'Image Src', :class => 'req', :autocomplete => :off
+      
+      
+      = f.text_area :description, :placeholder => "Write your post here...", :class => "req", :rows => "8"
+    = f.submit "Post", :class => "submit"

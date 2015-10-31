@@ -1,0 +1,22 @@
+.top-container
+  %header
+    .logo
+      %a{:href => "#home"} tweet<b>bay</b>
+    %ul
+      %li
+        %a{:href => "#about"} How It Works
+      %li
+        %a{:href => "#home"} About Us
+      %li
+        = link_to "Log in", twitter_auth_url, :class => "button"
+  %h1 Got followers, hate fees?
+.full-container
+  .content-wrapper
+    .tweet-wrap
+      = image_tag("tweetbay.jpg", :alt => "Tweetbay")
+    .info-wrap
+      %h1 Sell anything in a tweet for just 1.0%.
+      = link_to "Sign up with Twitter", twitter_auth_url, :class => "button"
+      //%input{:type => "submit", :value => "Get Started"}
+= javascript_include_tag "application"
+

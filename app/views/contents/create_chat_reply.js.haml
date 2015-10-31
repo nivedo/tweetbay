@@ -1,0 +1,5 @@
+$('.chat-inner').append("#{j(render(partial: "contents/chatbox", locals: { content: @content }))}");
+
+$('#chat_#{@content.id}').hide().fadeIn(500);
+
+$('#reply_field').val("");
