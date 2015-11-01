@@ -1,22 +1,4 @@
 .onboard-wrap
-  %h1 Thanks for signing up!  Let's compose a tweet.
+  %h1 Welcome!  Let's add your first product.
   %span (Don't worry, you can preview before posting.)
-.add-product-wrap
-  //.input-image#dropzone
-  //  Add a photo or image
-  %form#media-dropzone.dropzone{:action => "/image_contents", :enctype => "multipart/form-data"}
-    .dz-message{"data-dz-message" => ""}
-      .camera-icon
-      %span Add a photo, image, or meme
-    %input{:name => "authenticity_token", :type => "hidden", :value => form_authenticity_token}
-    .fallback
-      %input{:name => "media", :type => "file"}
-  .input-row
-    .col3
-      %input{:type => "text", :placeholder => "What are you selling?", :class => "title"}
-    .col1
-      %span.dollar $
-      %input{:type => "number", :placeholder => "0.00", :min => "0.01", :class => "price"}
-  .input-row
-    %textarea{:placeholder => "Tell us more.  Why will people love it? 😍"}
-%a.button{:href => "#next"} I'm done!
+= render :partial => 'contents/productadd'

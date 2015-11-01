@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   def index
     @users = User.order(:last_name);
     @title = "Directory";
-    
+
     respond_with(@users) do |format|
       format.json {
         @userList = @users.map { |u| { :id => u.id, :name => u.first_name + " " + u.last_name } }
@@ -36,8 +36,6 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(
       :email,
-      
-      
       :password, 
       :password_confirmation
     )

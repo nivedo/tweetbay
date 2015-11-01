@@ -3,6 +3,7 @@ class ContentsController < ApplicationController
   before_filter :require_login
 
   def new
+    @no_turbo = true
     @content = Content.new
     @content.parent_id = params[:parent_id]
     
@@ -13,6 +14,7 @@ class ContentsController < ApplicationController
     @content = Content.new(content_params)
     @content.user_id = current_user.id
 
+    # TODO: code this later to allow comments and follow up content.
     @content.ancestry = params[:content][:parent_id].empty? ? nil : params[:content][:parent_id]
     if params[:content]['attachment']
       @image = Image.create!(:attachment => params[:content]['attachment'])
@@ -40,7 +42,7 @@ class ContentsController < ApplicationController
     @embed_post_link = "New Discussion";
     @content = Content.new
 
-    @contents = Content.order('created_at DESC')
+    @contents = @user.contents.order('created_at DESC')
 
     @contents = @contents.where({ancestry: nil})
     
@@ -49,7 +51,11 @@ class ContentsController < ApplicationController
   end
 
   def onboard
+    @no_turbo = true
     @user = current_user
+    @content = Content.new
+
+    respond_with @content
   end
 
   def show
@@ -93,8 +99,7 @@ class ContentsController < ApplicationController
   def content_params
     params.require(:content).permit(
       :image_src, 
-      
-      
+      :price,
       :description,
       :title
     )

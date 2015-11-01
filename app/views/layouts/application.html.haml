@@ -6,7 +6,10 @@
     - if @splash_page
       = stylesheet_link_tag "splash", 'data-turbolinks-track' => true
     - else
-      = stylesheet_link_tag "application", :media => "all"
+      - if @no_turbo
+        = stylesheet_link_tag "application", :media => "all", 'data-turbolinks-track' => true
+      - else
+        = stylesheet_link_tag "application", :media => "all"
 
     = javascript_include_tag "application"
     //= javascript_include_tag params[:controller]

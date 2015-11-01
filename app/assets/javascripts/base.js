@@ -11,6 +11,7 @@ $(function() {
       file.previewElement.classList.add("dz-success");
       console.log(response.attachment.url);
       $('#media-dropzone').css('background-image', 'url(' + response.attachment.url + ')');
+      $('#content-image').val( response.attachment.url )
       $('.dz-message').hide()
     },
     complete: function(file) {

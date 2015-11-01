@@ -1,7 +1,12 @@
-%input{:id => "post_box", :type => "checkbox"}
-.post-box
-  .post-wrapper
-    = render :partial => 'contents/post'
+//%input{:id => "post_box", :type => "checkbox"}
+//.post-box
+//  .post-wrapper
+//    = render :partial => 'contents/post'
+//- @contents.each do |content|
+//  = render "summary", :content => content
 
-- @contents.each do |content|
-  = render "summary", :content => content
+.title-wrap
+  %h1 You have #{@contents.length} products. <a href="/contents/new">Add another.</a>
+.index-wrap
+  - @contents.each do |content|
+    = render "productcard", :content => content

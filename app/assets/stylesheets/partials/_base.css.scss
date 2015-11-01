@@ -33,9 +33,9 @@
 $light-gray: #cdd4d8;
 $yeti-orange: #f1831e;
 $yeti-blue: #2e9fff;
-$error-red: #ff7e8a;
+$error-red: #CD2C24;
 $font-gray: #5d5d5d;
-$yeti-green: #dbefd8;
+$yeti-green: #468966;
 
 $heyoo-pink: #e7515e;
 $heyoo-turq: #37C4B6;
@@ -53,8 +53,9 @@ $off-white: #fcfcfc;
 $blue-white: #f1f4f6;
 $blue-gray: #546673;
 $border-gray: #e8eced;
+$background-gray: lighten(#e1e8ed, 5);
 
-$border-gray: $blue-white;
+$border-gray: darken(#e1e8ed, 5);
 
 $off-white: #f9f9f9;
 
@@ -65,6 +66,7 @@ $accent-color: #0392D9;
 
 // Sizes
 
+$border-radius: 6px;
 $side-padding: 20px;
 $navbar-height: 50px;
 
@@ -106,6 +108,12 @@ $default-radius: 3px;
 
 .uppercase {
   text-transform: uppercase;
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 body {

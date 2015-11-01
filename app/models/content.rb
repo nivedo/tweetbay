@@ -2,6 +2,7 @@ class Content < ActiveRecord::Base
   has_ancestry
   has_one :image, dependent: :destroy
   
+  before_save { |content| content.title = title.titleize }
 
   default_scope { order('created_at') }
 

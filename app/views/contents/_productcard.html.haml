@@ -1,0 +1,27 @@
+.product-wrapper
+  .product-image
+    - if content.image_src != ""
+      %span.helper
+      %img{:src => content.image_src}
+  .title.truncate
+    #{content.title}
+  .price-active
+    .price
+      - if content.price
+        #{number_to_currency(content.price, :unit => "$")}
+      - else
+        #{number_to_currency(0, :unit => "$")}
+    - if content.price
+      .status.active
+        ✔ active
+    - else
+      .status.draft
+        draft
+    //.status.active
+    //  • ACTIVE
+    //.status.inactive
+    //  ✗ INACTIVE
+    //.status.draft
+    //  DRAFT
+
+

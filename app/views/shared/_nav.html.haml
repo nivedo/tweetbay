@@ -1,7 +1,7 @@
 %header
   .logo
-    %a{:href => "#home"} tweet<b>bay</b>
+    %a{:href => root_url} tweet<b>bay</b>
   .right
     .user-menu
-      %a{:href => "#you"} @#{@user.nickname}
-      = image_tag avatar_url(@user), :class => "tiny-icon"    
+      %a{:href => "#you"} @#{current_user.nickname}
+      = image_tag avatar_url(current_user), :class => "tiny-icon"    
