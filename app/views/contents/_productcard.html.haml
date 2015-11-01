@@ -1,8 +1,8 @@
 .product-wrapper
   .product-image
-    - if content.image_src != ""
+    - if content.image_src
       %span.helper
-      %img{:src => content.image_src}
+      %img{:src => content.image_src.gsub(".jpg","_card.jpg")}
     - else
       .photo-icon
       .no-image

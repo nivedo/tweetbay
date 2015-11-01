@@ -13,7 +13,7 @@ header {
     display:block;
     font-weight: 300;
     height: 100%;
-    width: 100%;
+    //width: 100%;
     line-height: 60px;
     color: #444;
     text-decoration: none;
@@ -35,19 +35,22 @@ header {
   }
 
   .user-menu {
-    width: 250px;
+    //width: 250px;
     .tiny-icon {
       float: right;
+      display: inline-block;
       width: 24px;
       height: 24px;
       border-radius: 4px;
       margin-top: 18px;
-      margin-right: 0.5em;
       //border: 3px solid darken(#e1e8ed,5);
     }
-    a {
+    .username {
+      font-weight: 500;
+      padding-left: 0.5em;
       float: right;
-      width: 160px;
+      text-align: right;
+      display: inline-block;
     }
   }
 

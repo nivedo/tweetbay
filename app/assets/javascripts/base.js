@@ -9,7 +9,7 @@ $(function() {
     createImageThumbnails: false,
     success: function (file, response) {
       file.previewElement.classList.add("dz-success");
-      console.log(response.attachment.url);
+      console.log(response.attachment);
       $('#media-dropzone').css('background-image', 'url(' + response.attachment.url + ')');
       $('#content-image').val( response.attachment.url )
       $('.dz-message').hide()

@@ -38,16 +38,13 @@ class ContentsController < ApplicationController
 
   def index
     @user = current_user
-    @title = "Discussions"
-    @embed_post_link = "New Discussion";
-    @content = Content.new
-
     @contents = @user.contents.order('created_at DESC')
-
-    @contents = @contents.where({ancestry: nil})
-    
-
-    respond_with @content
+    if @contents.length == 0
+      redirect_to onboard_url, data: { no_turbolink: true }
+    else
+      @contents = @contents.where({ancestry: nil})
+      respond_with @content
+    end
   end
 
   def onboard
@@ -71,7 +68,6 @@ class ContentsController < ApplicationController
       redirect_to content_url(@content.ancestry)
     end
     
-
     respond_with @content
   end
 
