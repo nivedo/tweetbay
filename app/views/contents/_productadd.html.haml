@@ -9,14 +9,15 @@
     .fallback
       %input{:name => "media", :type => "file"}
   = form_for(@content, :html => { :class => 'form-fields' }) do |f|
-    = f.hidden_field :image_src, :id => "content-image", :value => ""
-    = f.hidden_field :parent_id
-    .input-row
-      .col3
-        = f.text_field :title, :placeholder => "What are you selling?", :class => "title"
-      .col1
-        %span.dollar $
-        = f.number_field :price, :placeholder => "0.00", :step => "any", :class => "price"
-    .input-row
-      = f.text_area :description, :placeholder => "Tell us more.  Why will people love it? 😍"
-    = f.submit "I'm done!", :class => "submit"
+    %fieldset
+      = f.hidden_field :image_src, :id => "content-image", :value => ""
+      = f.hidden_field :parent_id
+      .input-row
+        .col3
+          = f.text_field :title, :placeholder => "What are you selling?", :class => "title req"
+        .col1
+          %span.dollar $
+          = f.number_field :price, :placeholder => "0.00", :step => "any", :class => "price req"
+      .input-row
+        = f.text_area :description, :placeholder => "Tell us more.  Why will people love it? 😍", :class => "req"
+      = f.submit "I'm done!", :class => "submit"

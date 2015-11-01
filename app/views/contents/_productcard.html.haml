@@ -3,6 +3,10 @@
     - if content.image_src != ""
       %span.helper
       %img{:src => content.image_src}
+    - else
+      .photo-icon
+      .no-image
+        %span No Image :(
   .title.truncate
     #{content.title}
   .price-active

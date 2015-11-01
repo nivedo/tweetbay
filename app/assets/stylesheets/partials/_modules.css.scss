@@ -58,6 +58,27 @@
       height: auto;
       vertical-align: middle;
     }
+
+    .photo-icon {
+      color: blue;
+      margin: 0 auto;
+      margin-top: 50px;
+      width: 30px;
+      height: 30px;
+      background-size: 100% auto;
+      background-image: image-url("photo.svg");
+    }
+
+    .no-image {
+      color: #777;
+      line-height: 2em;
+      font-weight: 500;
+      margin: 0 auto;
+      text-align: center;
+      font-size: initial;
+      letter-spacing: initial;
+      word-spacing: initial;
+    }
   }
 
   .title {

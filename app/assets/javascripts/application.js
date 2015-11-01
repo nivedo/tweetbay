@@ -17,4 +17,5 @@
 //= require modernizr
 //= require fastclick
 //= require dropzone
+//= require forms
 //= require base

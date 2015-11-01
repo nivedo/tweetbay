@@ -170,6 +170,30 @@ input[type="submit"] {
   }
 }
 
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.field-error {
+  &::-webkit-input-placeholder {
+    color: $error-red;
+  }
+  &:-moz-placeholder {
+      /* FF 4-18 */
+      color: $error-red;
+  }
+  &::-moz-placeholder {
+      /* FF 19+ */
+      color: $error-red;
+  }
+  &:-ms-input-placeholder {
+      /* IE 10+ */
+      color: $error-red;
+  }
+}
+
 .col1 {
   float: left;
   width: 22%;
