@@ -1,31 +1,32 @@
-.product-wrapper
-  .product-image
-    - if content.image_src
-      %span.helper
-      %img{:src => content.image_src.gsub(".jpg","_card.jpg")}
-    - else
-      .photo-icon
-      .no-image
-        %span No Image :(
-  .title.truncate
-    #{content.title}
-  .price-active
-    .price
-      - if content.price
-        #{number_to_currency(content.price, :unit => "$")}
+%a{:href => content_url(content)}
+  .product-wrapper
+    .product-image
+      - if content.image_src
+        %span.helper
+        %img{:src => content.image_src.gsub(".jpg","_card.jpg")}
       - else
-        #{number_to_currency(0, :unit => "$")}
-    - if content.price
-      .status.active
-        ✔ active
-    - else
-      .status.draft
-        draft
-    //.status.active
-    //  • ACTIVE
-    //.status.inactive
-    //  ✗ INACTIVE
-    //.status.draft
-    //  DRAFT
+        .photo-icon
+        .no-image
+          %span No Image :(
+    .title.truncate
+      #{content.title}
+    .price-active
+      .price
+        - if content.price
+          #{number_to_currency(content.price, :unit => "$")}
+        - else
+          #{number_to_currency(0, :unit => "$")}
+      - if content.price
+        .status.active
+          ✔ active
+      - else
+        .status.draft
+          draft
+      //.status.active
+      //  • ACTIVE
+      //.status.inactive
+      //  ✗ INACTIVE
+      //.status.draft
+      //  DRAFT
 
 

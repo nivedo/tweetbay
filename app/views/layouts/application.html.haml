@@ -11,6 +11,9 @@
       - else
         = stylesheet_link_tag "application", :media => "all"
 
+    - if @twitter_css
+      = stylesheet_link_tag "twitter", 'data-turbolinks-track' => true
+
     = javascript_include_tag "application"
     //= javascript_include_tag params[:controller]
     - if @splash_page

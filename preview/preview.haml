@@ -15,11 +15,11 @@
               %img.avatar{ :src => "avatar.png" }
               %strong.fullname Gary Chang
               %span.username
-                %s @
-                %b gwchang
+                %b @gwchang
             %small.time
               %a.tweet-timestamp{ :href => "#detail-tweet" }
-          %p.TweetTextSize Tweet!
+          .tweet-wrap
+            %p.TweetTextSize Tweeter, but this sentence is really long. Tweeter, but this sentence is really long. Tweeter, but this sentence is really long. Tweeter, but this sentence is really long. 
           .card-grid
             .card.image-card.top-card
               %img{ :src => "kitty.jpg", :alt => "Super awesome, one-of-a-kind t-shirt" }
@@ -30,8 +30,9 @@
                 %h2.card-title Litto Kitty
                 .buynow-byline
                   %span.buynow-price $15.00
-                  &nbsp;&rlm;&nbsp;
                   %span.buynow-merchant blub.io
+            .card-icons
+              %img{ :src => "twitter_icons.png", :alt => "share" }
       .buynow-container.modal-body.modal-hidden{ :id => "buyNowModal" }
         .buynow-left-column
           .buynow-productImageWrapper
@@ -45,9 +46,8 @@
             .buynow-byline
               Sold by blub.io
             .buynow-price
-              %span.buynow-currency $
-              %span.buynow-number 15.00
-              %span.buynow-shipping & shopping included
+              %span.buynow-currency $15.00
+              %span.buynow-shipping & shipping included
             .buynow-productInfo
               .buynow-label
                 %a.buynow-labeltag.is-selected{ :href => "" } About

@@ -1,11 +1,28 @@
-= render "box", :content => @content
-
-
-
-.comments-wrapper
-  - unless @content.children.nil?
-    .comments-inner
-      - @content.children.each do |child|
-        = render "comment", :content => child
-    = render "reply"
-
+.modal-wrapper
+  .inner
+    = render "buypreview", :content => @content
+.title-wrap
+  %h1 #{@content.title}
+.preview-container
+  .preview-left
+    = render "preview", :content => @content
+    .actions
+      %a{:href => "#preview"} preview
+      %a{:href => "#edit"} edit
+  .preview-right
+    .detail-wrapper
+      //%h2 Product Details
+      .input-row
+        %label Quantity Available:
+        %input{:type => "text", :placeholder => "(optional)"}
+      //.input-row
+      //  %label Start Date
+      //  %input{:type => "text", :placeholder => "now"}
+      .input-row
+        %label Shipping Fee:
+        %input{:type => "text", :placeholder => "0.00"}
+      .input-row
+        %label End Date
+        %input{:type => "text", :placeholder => "never"}
+      .input-center
+        %input{:type => "submit", :value => "Share on Twitter"}

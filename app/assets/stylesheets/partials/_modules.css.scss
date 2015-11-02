@@ -16,6 +16,7 @@ $padding-width: 15px;
   @include clearfix;
 
   .product-wrapper {
+    background: white;
     border: 1px solid $border-gray;
     border-radius: $border-radius;
     float: left;
@@ -25,7 +26,6 @@ $padding-width: 15px;
     margin: 15px 15px;
 
     &:hover {
-      
       -moz-box-shadow: 2px 2px 5px $background-gray; 
       -webkit-box-shadow: 2px 2px 5px $background-gray; 
       box-shadow: 2px 2px 5px $background-gray;
@@ -88,6 +88,7 @@ $padding-width: 15px;
     padding: 0px 12px;
     margin-top: 10px;
     font-weight: 500;
+    color: #333;
   }
 
   .price-active {
@@ -139,6 +140,36 @@ $padding-width: 15px;
   }
 }
 
+.preview-container {
+  @include clearfix;
+  margin: 0 auto;
+  width: 1000px;
+}
+
+.preview-left {
+  float: left;
+  width: 570px;
+
+  .actions {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 400;
+
+    a:after {
+      content: " \00b7";
+    }
+    a:last-of-type:after {
+      content: "";
+    }
+  }
+}
+
+.preview-right {
+  float: left;
+  width: 352px;
+}
+
 // Hacky reply footer stuff
 
 [type=checkbox] {
@@ -150,3 +181,4 @@ label > * { pointer-events: none; }
 :checked + div {
   display: block !important;
 }
+

@@ -56,13 +56,15 @@ class ContentsController < ApplicationController
   end
 
   def show
+    @twitter_css = true
     @content = Content.find(params[:id])
     @reply = Content.new
-    @title = @content.title
-    @subtitle = "From " + @content.user.nickname + ". on " + @content.created_at.strftime("%Y-%m-%d")
 
     @user = current_user
     @embed_reply = true
+    if @user != @content.user
+      redirect_to contents_url
+    end
 
     if @content.ancestry
       redirect_to content_url(@content.ancestry)

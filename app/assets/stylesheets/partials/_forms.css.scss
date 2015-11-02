@@ -1,4 +1,5 @@
 .add-product-wrap {
+  background: white;
   margin: 0 auto;
   margin-top: 35px;
   text-align: center;
@@ -202,6 +203,58 @@ fieldset {
 .col3 {
   float: left;
   width: 78%;
+}
+
+.detail-wrapper {
+  padding: 0 35px;
+
+  h2 {
+    margin-top: 1.2em;
+    font-weight: 300;
+  }
+
+  .input-row {
+    border: none;
+    margin-top: 10px;
+
+    &:first-of-type{
+      margin-top : 2em;
+    }
+  }
+
+  .input-center {
+    margin: 0 auto;
+  }
+
+  label {
+    font-weight: 500;
+    font-size: 0.9em;
+    width: 60%;
+    display: inline-block;
+  }
+
+  input {
+    border: none;
+    margin-top: 4px;
+    border-bottom: 1px solid $border-gray;
+    height: 35px;
+    display: inline-block;
+    width: 35%;
+    //border-radius: 6px;
+    //transition: all 0.5s ease;
+
+    &:focus {
+      border-bottom: 2px solid $accent-color;
+    }
+  }
+
+  input[type="submit"] {
+    margin-top: 30px;
+    width: 200px;
+    height: 100%;
+    display: block;
+    line-height: 45px;
+  }
 }
 
 // THIS IS OLD STUFF //

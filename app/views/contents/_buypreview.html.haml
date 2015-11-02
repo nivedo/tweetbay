@@ -1,0 +1,54 @@
+.buynow-container.modal-body.modal-hidden{ :id => "buyNowModal" }
+  .buynow-left-column
+    .buynow-productImageWrapper
+      %img.buynow-largeImage{ :src => content.image_src, :alt => "Super awesome, one-of-a-kind t-shirt" }
+    .buynow-altImageBox
+      .buynow-altImageWrapper
+        %img.buynow-smallImage{ :src => content.image_src, :alt => "Super awesome, one-of-a-kidn t-shirt" }
+  .buynow-right-column
+    .buynow-summary
+      %h2 #{content.title}
+      .buynow-byline
+        Sold by #{current_user.name}
+      .buynow-price
+        - if content.price
+          %span.buynow-currency #{number_to_currency(content.price, :unit => "$")}
+        - else
+          %span.buynow-currency #{number_to_currency(0, :unit => "$")}
+        %span.buynow-shipping & shipping included
+      .buynow-productInfo
+        .buynow-label
+          %a.buynow-labeltag.is-selected{ :href => "" } About
+          %a.buynow-labeltag{ :href => "" } Shipping
+          %a.buynow-labeltag{ :href => "" } Return
+        .buynow-productInfoContent
+          .buynow-contentText
+            #{content.description}
+          .buynow-contentText.is-hidden
+            Shipping policy
+          .buynow-contentText.is-hidden
+            Sales terms 
+      .buynow-variants 
+        .buynow-variant
+          %label.t1-label Color
+          .select-box
+            %select.t1-select
+              %option{:value => "", :disabled => true, :selected => true}= "Select your option" 
+              %option{:value => "Cyan", :selected => false}= "Cyan"
+        .buynow-variant
+          %label.t1-label Gender
+          .select-box
+            %select.t1-select
+              %option{:value => "", :disabled => true, :selected => true}= "Select your option" 
+              %option{:value => "Unisex", :selected => false}= "Unisex"
+        .buynow-variant
+          %label.t1-label Size
+          .select-box
+            %select.t1-select
+              %option{:value => "", :disabled => true, :selected => true}= "Select your option" 
+              %option{:value => "Medium", :selected => false}= "Medium"
+              %option{:value => "Large", :selected => false}= "Large"
+    .buynow-bottom
+      .buynow-buyButtonArea
+        %button.buynow-buyButton{ :type => "submit", :disabled => "disabled"}
+          %span Buy now
