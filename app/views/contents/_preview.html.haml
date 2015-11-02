@@ -17,7 +17,7 @@
           %img{ :src => @content.image_src, :alt => "No image :(" }
         .card.commerce-card.bottom-card
           .right
-            %button{ :type => "submit", "data-toggle" => "modal", "data-target" => "#buyNowModal" } Buy
+            %button{ :type => "submit", :class => "modal-trigger", "data-toggle" => "modal", "data-target" => "#buyNowModal" } Buy
           .left
             %h2.card-title #{content.title}
             .buynow-byline

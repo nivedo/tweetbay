@@ -21,4 +21,18 @@ $(function() {
       file.previewElement.classList.add("dz-error");
     }
   });
+
+  $('html').click(function() {
+    if($('.modal-wrapper').is(":visible")) {
+      $('.modal-wrapper').toggle();
+    }
+  });
+
+  $('.modal-trigger').click(function(){
+    $('#modal-wrapper').toggle();
+  });
+
+  $('.modal-body, .modal-trigger').click(function(event){
+    event.stopPropagation();
+  });
 });

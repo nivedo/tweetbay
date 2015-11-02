@@ -291,6 +291,7 @@
 
 .modal-wrapper {
   position: absolute;
+  //display: none;
   width: 100%;
   height: 100%;
   left: 0;
@@ -298,6 +299,12 @@
   z-index: 99;
   //margin:-375px 0 0 -295px;
   background-color: rgba(0,0,0,0.6);
+
+  h1 {
+    font-weight: 300;
+    text-align: center;
+    color: white;
+  }
 }
 .modal-hidden {
   margin: 0 auto;
@@ -563,4 +570,10 @@
   position: relative;
   overflow: hidden;
   border-radius: 5px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }

@@ -1,13 +1,14 @@
-.modal-wrapper
+.modal-wrapper#modal-wrapper
   .inner
     = render "buypreview", :content => @content
+    //%h1 Preview
 .title-wrap
   %h1 #{@content.title}
 .preview-container
   .preview-left
     = render "preview", :content => @content
     .actions
-      %a{:href => "#preview"} preview
+      %a{:href => "#preview", :class => "modal-trigger"} preview
       %a{:href => "#edit"} edit
   .preview-right
     .detail-wrapper
