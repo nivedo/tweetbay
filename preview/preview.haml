@@ -1,0 +1,86 @@
+!!! 5
+%html
+  %head
+    %link{ :rel => "stylesheet", :type => "text/css", :href => "preview.css" }
+    %script{ :language => "javascript", :type => "text/javascript", :src => "preview.js" }
+    %title tweetbay
+
+  %body
+    .preview-wrap
+      %h1 Tweet Preview
+      .original-tweet-container.app
+        .original-tweet
+          .stream-item-header
+            %a.account-group{ :href => "#twitter_account" }
+              %img.avatar{ :src => "avatar.png" }
+              %strong.fullname Gary Chang
+              %span.username
+                %s @
+                %b gwchang
+            %small.time
+              %a.tweet-timestamp{ :href => "#detail-tweet" }
+          %p.TweetTextSize Tweet!
+          .card-grid
+            .card.image-card.top-card
+              %img{ :src => "kitty.jpg", :alt => "Super awesome, one-of-a-kind t-shirt" }
+            .card.commerce-card.bottom-card
+              .right
+                %button{ :type => "submit", "data-toggle" => "modal", "data-target" => "#buyNowModal" } Buy
+              .left
+                %h2.card-title Litto Kitty
+                .buynow-byline
+                  %span.buynow-price $15.00
+                  &nbsp;&rlm;&nbsp;
+                  %span.buynow-merchant blub.io
+      .buynow-container.modal-body.modal-hidden{ :id => "buyNowModal" }
+        .buynow-left-column
+          .buynow-productImageWrapper
+            %img.buynow-largeImage{ :src => "kitty.jpg", :alt => "Super awesome, one-of-a-kind t-shirt" }
+          .buynow-altImageBox
+            .buynow-altImageWrapper
+              %img.buynow-smallImage{ :src => "kitty.jpg", :alt => "Super awesome, one-of-a-kidn t-shirt" }
+        .buynow-right-column
+          .buynow-summary
+            %h2 Litto Kitty
+            .buynow-byline
+              Sold by blub.io
+            .buynow-price
+              %span.buynow-currency $
+              %span.buynow-number 15.00
+              %span.buynow-shipping & shopping included
+            .buynow-productInfo
+              .buynow-label
+                %a.buynow-labeltag.is-selected{ :href => "" } About
+                %a.buynow-labeltag{ :href => "" } Shipping
+                %a.buynow-labeltag{ :href => "" } Return
+              .buynow-productInfoContent
+                .buynow-contentText
+                  Super awesome, one-of-a-kind t-shirt
+                .buynow-contentText.is-hidden
+                  Shipping policy
+                .buynow-contentText.is-hidden
+                  Sales terms 
+            .buynow-variants 
+              .buynow-variant
+                %label.t1-label Color
+                .select-box
+                  %select.t1-select
+                    %option{:value => "", :disabled => true, :selected => true}= "Select your option" 
+                    %option{:value => "Cyan", :selected => false}= "Cyan"
+              .buynow-variant
+                %label.t1-label Gender
+                .select-box
+                  %select.t1-select
+                    %option{:value => "", :disabled => true, :selected => true}= "Select your option" 
+                    %option{:value => "Unisex", :selected => false}= "Unisex"
+              .buynow-variant
+                %label.t1-label Size
+                .select-box
+                  %select.t1-select
+                    %option{:value => "", :disabled => true, :selected => true}= "Select your option" 
+                    %option{:value => "Medium", :selected => false}= "Medium"
+                    %option{:value => "Large", :selected => false}= "Large"
+          .buynow-bottom
+            .buynow-buyButtonArea
+              %button.buynow-buyButton{ :type => "submit", :disabled => "disabled"}
+                %span Buy now
