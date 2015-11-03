@@ -1,2 +1,29 @@
 = render "header", :howitworks => true
-%h1 How It Works
+.static-container
+  %h1 How It Works
+  %ol
+    %li
+      .col-number
+        1
+      .col-tip
+        .tip-header
+          Descripe what's awesome about your product.
+        .tip-body
+          Choose a photo. Set a price.
+    %li
+      .col-number
+        2 
+      .col-tip
+        .tip-header
+          Preview your Tweet.
+        .tip-body
+          How many units available? Set shipping fee, sale end date.
+    %li
+      .col-number
+        3 
+      .col-tip
+        .tip-header
+          Tweet!
+        .tip-body
+          Start selling.
+  = link_to "Get started", twitter_auth_url, :class => "button"
