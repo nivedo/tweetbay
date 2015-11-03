@@ -1,0 +1,11 @@
+%header
+  .logo
+    %a{:href => root_url} tweet<b>bay</b>
+  %ul
+    %li
+      = link_to "How It Works", howitworks_url, :class => ( howitworks ? "active" : "" )
+    %li
+      %a{:href => "#home"} About Us
+    %li
+      = link_to "Log in", twitter_auth_url, :class => "button"
+
