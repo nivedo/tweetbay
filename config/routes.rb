@@ -8,6 +8,7 @@ Tweetbay::Application.routes.draw do
   root "contents#index"
 
   get "splash", :to => "splash#index", :as => "splash"
+  get "howitworks", :to => "splash#howitworks", :as => "howitworks"
 
   get "onboard", :to => "contents#onboard", :as => "onboard"
 

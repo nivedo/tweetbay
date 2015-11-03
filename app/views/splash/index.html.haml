@@ -1,14 +1,5 @@
+= render "header"
 .top-container
-  %header
-    .logo
-      %a{:href => root_url} tweet<b>bay</b>
-    %ul
-      %li
-        %a{:href => "#about"} How It Works
-      %li
-        %a{:href => "#home"} About Us
-      %li
-        = link_to "Log in", twitter_auth_url, :class => "button"
   %h1 Got followers, hate fees?
 .full-container
   .content-wrapper

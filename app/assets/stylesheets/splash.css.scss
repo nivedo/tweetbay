@@ -26,9 +26,15 @@ h1 {
   margin-bottom: 1em;
 }
 
+.active {
+  color: $accent-color;
+  //text-decoration: underline;
+}
+
 .top-container {
   //background-color: #f6f8fa;//$accent-color;
-  height: 450px;
+  //height: 450px;
+  height: 250px;
 
   h1 {
     text-align: center;
