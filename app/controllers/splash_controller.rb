@@ -6,4 +6,8 @@ class SplashController < ApplicationController
   def howitworks
     @splash_page = true
   end
+  
+  def aboutus
+    @splash_page = true
+  end
 end

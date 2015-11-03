@@ -9,6 +9,7 @@ Tweetbay::Application.routes.draw do
 
   get "splash", :to => "splash#index", :as => "splash"
   get "howitworks", :to => "splash#howitworks", :as => "howitworks"
+  get "aboutus", :to => "splash#aboutus", :as => "aboutus"
 
   get "onboard", :to => "contents#onboard", :as => "onboard"
 
