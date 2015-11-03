@@ -37,6 +37,7 @@ class ContentsController < ApplicationController
   end
 
   def index
+    @active = "products"
     @user = current_user
     @contents = @user.contents.order('created_at DESC')
     if @contents.length == 0
@@ -45,6 +46,10 @@ class ContentsController < ApplicationController
       @contents = @contents.where({ancestry: nil})
       respond_with @content
     end
+  end
+
+  def orders
+    @active = "orders"
   end
 
   def onboard

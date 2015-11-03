@@ -9,10 +9,11 @@
             %b @#{current_user.nickname}
         %small.time
           %span
-            This is a preview of your tweet!
+            PREVIEW
           %a.tweet-timestamp{ :href => "#detail-tweet" }
-      //.tweet-wrap
-      //  %p.TweetTextSize Buy my new thing!
+      .tweet-wrap
+        %textarea{:type => "text", :placeholder => "Write a message to your followers here! 😎"}
+        //%p.TweetTextSize Buy my new thing!
       .card-grid
         .card.image-card.top-card
           %span.helper

@@ -1,29 +1,6 @@
 = render "header", :howitworks => true
-.static-container
-  %h1 How It Works
-  %ol
-    %li
-      .col-number
-        1
-      .col-tip
-        .tip-header
-          Describe what's awesome about your product.
-        .tip-body
-          Choose a photo. Set a price.
-    %li
-      .col-number
-        2 
-      .col-tip
-        .tip-header
-          Tweet!.
-        .tip-body
-          Start selling.
-    %li
-      .col-number
-        3 
-      .col-tip
-        .tip-header
-          Get paid.
-        .tip-body
-          Sweet!
-  = link_to "Get Started", twitter_auth_url, :class => "button"
+.title-wrap
+  %h1 Why not just try it out?
+.main-wrap
+  = render partial: "contents/sample", :content => @content_sample
+//= link_to "Get Started", twitter_auth_url, :class => "button"

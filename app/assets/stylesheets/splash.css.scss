@@ -1,4 +1,6 @@
 $accent-color: #0392D9;
+$border-radius: 6px;
+$error-red: lighten(#E74C3C,5);
 
 * {
   margin: 0;
@@ -34,8 +36,7 @@ h1 {
 .static-container {
   width: 700px;
   position: relative;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
   h1 {
@@ -87,6 +88,10 @@ h1 {
 
     }
   }
+}
+
+.about-wrapper {
+  margin-top: 300px;
 }
 
 .top-container {
@@ -172,32 +177,6 @@ a.button {
   right: 0;
 }
 
-input[type="submit"] {
-  padding: 10px 2%;
-  margin: 0px auto;
-  width: 200px;
-  height: 50px;
-  outline: none;
-
-  max-width: 250px;
-  margin-bottom: 15px;
-
-  border-radius: 5px;
-  background-color: $accent-color;
-  border: 0;
-  transition: background-color 0.1s;
-
-  font: {
-    font-weight: 100;
-    size: 1em;
-  }
-
-  &:active {
-    position: relative;
-    top: 1px;
-  }
-}
-
 header {
   margin: 0 auto;
   width: 1000px;
@@ -263,4 +242,189 @@ header {
       }
     }
   }
+}
+
+.add-product-wrap {
+  background: white;
+  margin: 0 auto;
+  margin-top: 35px;
+  text-align: center;
+
+  max-width: 480px;
+  height: 510px;
+  border: 1px solid darken(#e1e8ed, 5);
+  border-radius: $border-radius;
+
+  .input-image {
+    height: 200px;
+    width: 100%;
+    background-color: lighten(#e1e8ed, 5);
+    border-bottom: 1px solid darken(#e1e8ed, 5);
+    font-weight: 500;
+    line-height: 200px;
+    color: #888;
+  }
+
+  .dropzone {
+    height: 200px;
+    width: 100%;
+    background-color: lighten(#e1e8ed, 5);
+    border: none;
+    border-bottom: 1px solid darken(#e1e8ed, 5);
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    font-weight: 500;
+    line-height: 100px;
+    color: #888;
+
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    .dz-message {
+      margin-top: 50px;
+    }
+
+    .camera-icon {
+      margin: 0 auto;
+      margin-bottom: -30px;
+      width: 30px;
+      height: 30px;
+      background-size: 100% auto;
+      background-image: image-url("photo.svg");
+    }
+
+    .dz-preview.dz-image-preview {
+      background-color: lighten(#e1e8ed, 5);
+    }
+
+    .dz-image, .dz-details {
+      display: none;
+    }
+
+    .dz-progress {
+      background: white;
+      width: 478px;
+      margin-left: -239px;
+      height: 4px;
+      border-radius: 0px;
+      margin-top: 109px;
+      .dz-upload {
+        background: $accent-color;
+        //background: linear-gradient(to bottom, #ebe, #111);
+      }
+    }
+  }
+}
+
+
+input[type="submit"] {
+  display:block;
+  font-weight: 500;
+  height: 100%;
+  width: 100%;
+  line-height: 45px;
+  text-decoration: none;
+  background-color: $accent-color;
+  border: none;
+  border-radius: $border-radius;
+  text-align: center;
+
+  margin: 0 auto;
+  margin-top: 35px;
+  text-decoration: none;
+  color: white;
+  width: 120px;
+  outline: none;
+
+  &:active {
+    position: relative;
+    top: 1px;
+  }
+}
+
+.input-row {
+  //@include clearfix;
+  width: 100%;
+  border-bottom: 1px solid darken(#e1e8ed, 5);
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+
+  input {
+    width: 95%;
+    border: none;
+    height: 50px;
+    padding-left: 0.5em;
+    outline: none;
+    color: #333;
+  }
+
+  input[type=number]::-webkit-inner-spin-button, 
+  input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+  }
+
+  .dollar {
+    font-size: 1em;
+    font-weight: 300;
+    font-family: Arial;
+  }
+
+  .price {
+    width: 82%;
+  }
+
+  textarea {
+    height: 250px;
+    width: 100%;
+    padding: 1em 1em;
+    outline: none;
+    border: none;
+    color: #333;
+
+    &:focus {
+      //background-image: none;
+    }
+  }
+
+  .title {
+    font-weight: 500;
+  }
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.field-error {
+  &::-webkit-input-placeholder {
+    color: $error-red;
+  }
+  &:-moz-placeholder {
+      /* FF 4-18 */
+      color: $error-red;
+  }
+  &::-moz-placeholder {
+      /* FF 19+ */
+      color: $error-red;
+  }
+  &:-ms-input-placeholder {
+      /* IE 10+ */
+      color: $error-red;
+  }
+}
+
+.col1 {
+  float: left;
+  width: 22%;
+}
+
+.col3 {
+  float: left;
+  width: 78%;
 }

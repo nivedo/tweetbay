@@ -18,6 +18,16 @@ class UsersController < ApplicationController
     respond_with @user
   end
 
+  def update
+    @user = current_user
+    
+    if @user.update_attributes(user_params)
+      flash[:success] = "Updated!" if !request.xhr?
+    end
+
+    render 'profile'
+  end
+
   def profile
     @user = current_user
     respond_with @user

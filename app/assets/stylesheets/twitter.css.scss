@@ -41,7 +41,12 @@
     font-weight: normal;
     width: 505.984px;
     word-wrap: break-word;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
+
+    textarea {
+      border: none;
+      width: 450px;
+    }
   }
 
   .stream-item-header {
@@ -61,9 +66,9 @@
     }
     .time {
       float: right;
-      color: #8899a6;
+      color: #666;
       font-size: 0.9em;
-      font-weight: 400;
+      font-weight: 500;
     }
     .avatar {
       float: left;

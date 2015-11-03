@@ -1,10 +1,10 @@
 = render "header", :aboutus => true
-.static-container
-  %h1 5% + 25¢ per transaction
+.about-wrap
+  .title-wrap
+    %h1 5% + 25¢ per transaction
   .about-container
     That's it. 
   .about-container
-    No monthly fees, no refund fees.
-  %br
-  %br
+    No monthly fees, no processing fees, no refund fees.
+  .start-link
     = link_to "Get Started", twitter_auth_url, :class => "button"

@@ -3,13 +3,13 @@
   %head
     %title tweetbay
 
-    - if @splash_page
-      = stylesheet_link_tag "splash", 'data-turbolinks-track' => true
+    //- if @splash_page
+    //  = stylesheet_link_tag "splash", 'data-turbolinks-track' => true
+    //- else
+    - if @no_turbo
+      = stylesheet_link_tag "application", :media => "all", 'data-turbolinks-track' => true
     - else
-      - if @no_turbo
-        = stylesheet_link_tag "application", :media => "all", 'data-turbolinks-track' => true
-      - else
-        = stylesheet_link_tag "application", :media => "all"
+      = stylesheet_link_tag "application", :media => "all"
 
     - if @twitter_css
       = stylesheet_link_tag "twitter", 'data-turbolinks-track' => true
@@ -33,7 +33,7 @@
       = yield
 
     - else
-      = render 'shared/nav'
+      = render 'shared/nav', :active => @active
       .main-wrap
         = yield
 

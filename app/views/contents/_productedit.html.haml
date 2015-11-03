@@ -1,0 +1,21 @@
+.add-product-wrap
+  //.input-image#dropzone
+  //  Add a photo or image
+  %form#media-dropzone.dropzone{:action => "/image_contents", :enctype => "multipart/form-data", :style => 'background-image: url("' + @content.image_src + '")'}
+    .dz-message{"data-dz-message" => ""}
+    %input{:name => "authenticity_token", :type => "hidden", :value => form_authenticity_token}
+    .fallback
+      %input{:name => "media", :type => "file"}
+  = form_for(@content, :html => { :class => 'form-fields' }) do |f|
+    %fieldset
+      = f.hidden_field :image_src, :id => "content-image"
+      = f.hidden_field :parent_id
+      .input-row
+        .col3
+          = f.text_field :title, :placeholder => "What are you selling?", :class => "title req"
+        .col1
+          %span.dollar $
+          = f.number_field :price, :placeholder => "0.00", :step => "any", :class => "price req"
+      .input-row
+        = f.text_area :description, :placeholder => "Tell us more.  Why will people love it? 😍", :class => "req"
+      = f.submit "Update", :class => "submit"

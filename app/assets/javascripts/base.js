@@ -48,4 +48,6 @@ $(function() {
       event.stopPropagation();
     }
   });
+
+  $('.datepicker').pikaday({ minDate: moment().toDate() });
 });

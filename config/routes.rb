@@ -12,6 +12,7 @@ Tweetbay::Application.routes.draw do
   get "aboutus", :to => "splash#aboutus", :as => "aboutus"
 
   get "onboard", :to => "contents#onboard", :as => "onboard"
+  get "orders", :to => "contents#orders", :as => "orders"
 
   get "logout", :to => "sessions#destroy", :as => "logout"
   get "login", :to => "sessions#new", :as => "login"

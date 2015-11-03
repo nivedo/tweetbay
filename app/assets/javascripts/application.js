@@ -17,6 +17,9 @@
 //= require jquery.autosize.min
 //= require modernizr
 //= require fastclick
+//= require moment.min.js
+//= require pikaday.min.js
+//= require pikaday.jquery.js
 //= require dropzone
 //= require forms
 //= require base

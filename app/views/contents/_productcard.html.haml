@@ -16,14 +16,10 @@
           #{number_to_currency(content.price, :unit => "$")}
         - else
           #{number_to_currency(0, :unit => "$")}
-      - if content.price
-        .status.active
-          ✔ active
-      - else
-        .status.draft
-          draft
+      .status.draft
+        draft
       //.status.active
-      //  • ACTIVE
+      //  ✔ ACTIVE
       //.status.inactive
       //  ✗ INACTIVE
       //.status.draft

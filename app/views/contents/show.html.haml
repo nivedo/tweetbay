@@ -9,8 +9,8 @@
     = render "preview", :content => @content
     .actions
       %a{:href => "#preview", :class => "modal-trigger"} preview
-      %a{:href => "#edit"} edit
-      %a.urgent{:href => "#delete"} delete
+      = link_to "edit", edit_content_url(@content)
+      = link_to "delete", @content, :method => :delete, :class => "urgent", data: { confirm: "Are you sure?" }
   .preview-right
     .detail-wrapper
       //%h2 Product Details
@@ -25,6 +25,6 @@
         %input{:type => "text", :placeholder => "0.00"}
       .input-row
         %label End Date
-        %input{:type => "text", :placeholder => "never"}
+        %input{:type => "text", :placeholder => "never", :class => "datepicker"}
       .input-center
-        %input{:type => "submit", :value => "Share on Twitter"}
+        %input{:type => "submit", :value => "Tweet it"}

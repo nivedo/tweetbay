@@ -27,27 +27,28 @@
           .buynow-contentText.is-hidden
             Shipping policy
           .buynow-contentText.is-hidden
-            Sales terms 
-      .buynow-variants 
-        .buynow-variant
-          %label.t1-label Color
-          .select-box
-            %select.t1-select
-              %option{:value => "", :disabled => true, :selected => true}= "Select your option" 
-              %option{:value => "Cyan", :selected => false}= "Cyan"
-        .buynow-variant
-          %label.t1-label Gender
-          .select-box
-            %select.t1-select
-              %option{:value => "", :disabled => true, :selected => true}= "Select your option" 
-              %option{:value => "Unisex", :selected => false}= "Unisex"
-        .buynow-variant
-          %label.t1-label Size
-          .select-box
-            %select.t1-select
-              %option{:value => "", :disabled => true, :selected => true}= "Select your option" 
-              %option{:value => "Medium", :selected => false}= "Medium"
-              %option{:value => "Large", :selected => false}= "Large"
+            Sales terms
+      - if false
+        .buynow-variants 
+          .buynow-variant
+            %label.t1-label Color
+            .select-box
+              %select.t1-select
+                %option{:value => "", :disabled => true, :selected => true}= "Select your option" 
+                %option{:value => "Cyan", :selected => false}= "Cyan"
+          .buynow-variant
+            %label.t1-label Gender
+            .select-box
+              %select.t1-select
+                %option{:value => "", :disabled => true, :selected => true}= "Select your option" 
+                %option{:value => "Unisex", :selected => false}= "Unisex"
+          .buynow-variant
+            %label.t1-label Size
+            .select-box
+              %select.t1-select
+                %option{:value => "", :disabled => true, :selected => true}= "Select your option" 
+                %option{:value => "Medium", :selected => false}= "Medium"
+                %option{:value => "Large", :selected => false}= "Large"
     .buynow-bottom
       .buynow-buyButtonArea
         %button.buynow-buyButton{ :type => "submit", :disabled => "disabled"}

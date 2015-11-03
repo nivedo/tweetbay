@@ -5,6 +5,7 @@ class SplashController < ApplicationController
 
   def howitworks
     @splash_page = true
+    @content = Content.first
   end
   
   def aboutus

@@ -55,14 +55,18 @@ header {
     }
   }
 
+  .navmenu {
+    float: right;
+  }
+
   ul {
     list-style: none;
     padding: 0;
-    width: 350px;
+    width: 500px;
     float: right;
 
     li {
-      float: left;
+      float: right;
       padding-right: 2em;
 
       a {
@@ -78,6 +82,10 @@ header {
         &:hover {
           color: $accent-color;
         }
+      }
+
+      .active {
+        color: $accent-color;
       }
     }
 
@@ -95,6 +103,23 @@ header {
       transition: all 0.1s ease;
       &:hover {
         border: 1px solid $accent-color;
+      }
+    }
+
+    .open-button {
+      border: 2px solid #444;//$accent-color;
+      text-align: center;
+      border-radius: 6px;
+      padding: 0 10px;
+      height: 39px;
+      //height: 36px;
+      //width: 60px;
+      margin-top: 10px;
+      line-height: 36px;
+
+      transition: all 0.1s ease;
+      &:hover {
+        border: 2px solid $accent-color;
       }
     }
   }

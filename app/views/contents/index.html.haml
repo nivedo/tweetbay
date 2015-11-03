@@ -6,7 +6,13 @@
 //  = render "summary", :content => content
 
 .title-wrap
-  %h1 You have #{@contents.length} products. <a href="/contents/new">Add another.</a>
+  - if @contents.length == 0
+    %h1 You have no products yet. <a href="/contents/new">Add your first!</a>
+  - else
+    - if @contents.length == 1
+      %h1 You have #{@contents.length} product. <a href="/contents/new">Add another.</a>
+    - else
+      %h1 You have #{@contents.length} products. <a href="/contents/new">Add another.</a>
 .index-wrap
   - @contents.each do |content|
     = render "productcard", :content => content
