@@ -5,6 +5,10 @@
   h1 {
     font-weight: 300;
   }
+
+  .subtle {
+    font-color: #aaa;
+  }
 }
 
 $card-width: 290px;
@@ -143,7 +147,7 @@ $padding-width: 15px;
 .preview-container {
   @include clearfix;
   margin: 0 auto;
-  width: 1000px;
+  width: 930px;
 }
 
 .preview-left {
@@ -162,6 +166,10 @@ $padding-width: 15px;
     a:last-of-type:after {
       content: "";
     }
+
+    .urgent {
+      color: #bbb;
+    }
   }
 }
 
@@ -169,6 +177,27 @@ $padding-width: 15px;
   float: left;
   width: 352px;
 }
+
+.profile-header {
+  height: 40px;
+  .profile-avatar {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    border-radius: 99px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 99px;
+    }
+  }
+  line-height: 100px;
+  h1 {
+    display: inline-block;
+  }
+}
+
 
 // Hacky reply footer stuff
 

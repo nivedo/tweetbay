@@ -3,13 +3,14 @@
     = render "buypreview", :content => @content
     //%h1 Preview
 .title-wrap
-  %h1 #{@content.title}
+  %h1 #{@content.title} <span style="color: #aaa">(Draft)</span>
 .preview-container
   .preview-left
     = render "preview", :content => @content
     .actions
       %a{:href => "#preview", :class => "modal-trigger"} preview
       %a{:href => "#edit"} edit
+      %a.urgent{:href => "#delete"} delete
   .preview-right
     .detail-wrapper
       //%h2 Product Details

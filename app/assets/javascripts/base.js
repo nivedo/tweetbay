@@ -26,13 +26,26 @@ $(function() {
     if($('.modal-wrapper').is(":visible")) {
       $('.modal-wrapper').toggle();
     }
+    if($('.dropdown').is(":visible")) {
+      $('.dropdown').toggle();
+    }
   });
 
   $('.modal-trigger').click(function(){
     $('#modal-wrapper').toggle();
   });
 
+  $('#dropdown-toggle').click(function(){
+    $('.dropdown').toggle();
+  });
+
   $('.modal-body, .modal-trigger').click(function(event){
     event.stopPropagation();
+  });
+
+  $('.dropdown, #dropdown-toggle').click(function(event){
+    if($('.dropdown').is(":visible")) {
+      event.stopPropagation();
+    }
   });
 });

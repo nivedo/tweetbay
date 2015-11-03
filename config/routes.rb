@@ -16,6 +16,7 @@ Tweetbay::Application.routes.draw do
   get "logout", :to => "sessions#destroy", :as => "logout"
   get "login", :to => "sessions#new", :as => "login"
   get "signup", :to => "users#new", :as => "signup"
+  get "profile", :to => "users#profile", :as => "profile"
   get "post", :to => "contents#new", :as => "post"
 
   get "auth/twitter", :as => "twitter_auth"

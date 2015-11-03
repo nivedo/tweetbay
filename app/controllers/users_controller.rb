@@ -18,6 +18,11 @@ class UsersController < ApplicationController
     respond_with @user
   end
 
+  def profile
+    @user = current_user
+    respond_with @user
+  end
+
   def index
     @users = User.order(:last_name);
     @title = "Directory";

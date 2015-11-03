@@ -92,9 +92,75 @@ header {
       margin-top: 10px;
       line-height: 38px;
 
-      transition: all 0.2s ease;
+      transition: all 0.1s ease;
       &:hover {
         border: 1px solid $accent-color;
+      }
+    }
+  }
+
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 60px;
+    z-index: 11;
+    border: 1px solid $border-gray;
+    border-radius: 6px;
+    background: white;
+    width: 135px;
+    padding: 10px 0;
+    //height: 135px;
+
+    -moz-box-shadow: 2px 2px 5px $background-gray; 
+    -webkit-box-shadow: 2px 2px 5px $background-gray; 
+    box-shadow: 2px 2px 5px $background-gray;
+
+    &:after, &:before {
+      bottom: 100%;
+      left: 35%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+    }
+
+    &:after {
+      border-color: rgba(255, 255, 255, 0);
+      border-bottom-color: #fff;
+      border-width: 10px;
+      margin-left: -10px;
+    }
+    &:before {
+      border-color: rgba(194, 225, 245, 0);
+      border-bottom-color: $border-gray;
+      border-width: 11px;
+      margin-left: -11px;
+    }
+
+    ul {
+      float: none;
+      display: block;
+      margin: 0;
+
+      li {
+        float: none;
+        display: block;
+        width: 135px;
+        //border-bottom: 1px solid $border-gray;
+
+        a {
+          padding: 0 15px;
+          font-weight: 400;
+          height: 35px;
+          line-height: 35px;
+          width: 150px;
+        }
+
+        .subtle {
+          color: #999;
+        }
       }
     }
   }

@@ -254,6 +254,48 @@ fieldset {
     height: 100%;
     display: block;
     line-height: 45px;
+
+    &:focus {
+      border: none;
+    }
+  }
+}
+
+
+.profile-container {
+  margin: 0 auto;
+  width: 400px;
+  display: block;
+  margin-top: 75px;
+
+  .input-row {
+    border: none;
+    margin-top: 10px;
+  }
+
+  label {
+    display: inline-block;
+    width: 40%;
+    font-weight: 500;
+  }
+
+  input {
+    display:inline-block;
+    width: 55%;
+    height: 25px;
+    //border-bottom: 1px solid $border-gray;
+  }
+
+  input[type="submit"] {
+    margin-top: 30px;
+    width: 200px;
+    height: 100%;
+    display: block;
+    line-height: 45px;
+
+    &:focus {
+      border: none;
+    }
   }
 }
 

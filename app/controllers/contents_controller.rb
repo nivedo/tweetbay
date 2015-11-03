@@ -23,7 +23,7 @@ class ContentsController < ApplicationController
     
 
     if @content.save
-      redirect_url = contents_url
+      redirect_url = content_url(@content)
       flash[:success] = "New content posted!" if !request.xhr?
 
       unless params[:content][:parent_id].empty?
@@ -64,13 +64,12 @@ class ContentsController < ApplicationController
     @embed_reply = true
     if @user != @content.user
       redirect_to contents_url
+    else
+      if @content.ancestry
+        redirect_to content_url(@content.ancestry)
+      end
+      respond_with @content
     end
-
-    if @content.ancestry
-      redirect_to content_url(@content.ancestry)
-    end
-    
-    respond_with @content
   end
 
   def edit
