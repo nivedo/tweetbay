@@ -6,16 +6,18 @@
     %input{:name => "authenticity_token", :type => "hidden", :value => form_authenticity_token}
     .fallback
       %input{:name => "media", :type => "file"}
-  = form_for(@content, :html => { :class => 'form-fields' }) do |f|
+  = form_tag("/", :html => { :class => 'form-fields' }) do |f|
     %fieldset
-      = f.hidden_field :image_src, :id => "content-image"
-      = f.hidden_field :parent_id
+      = hidden_field_tag :image_src, :id => "content-image"
+      = hidden_field_tag :parent_id
       .input-row
         .col3
-          = f.text_field :title, :placeholder => "What are you selling?", :class => "title req"
+          = text_field_tag :title, nil, { :placeholder => "What are you selling?", :class => "title req" }
         .col1
           %span.dollar $
-          = f.number_field :price, :placeholder => "0.00", :step => "any", :class => "price req"
+          = number_field_tag :price, nil, { :placeholder => "0.00", :step => "any", :class => "price req" }
       .input-row
-        = f.text_area :description, :placeholder => "Tell us more.  Why will people love it? 😍", :class => "req"
-      = f.submit "Preview", :class => "submit"
+        = text_area_tag :description, nil, { :placeholder => "Tell us more.  Why will people love it? 😍", :class => "req" }
+      = submit_tag "Preview Tweet", :class => "submit-populate", :id => "populate"
+.preview-container{ :style => "margin-top: 100px; display: none" }
+  = render "contents/preview", :content => @content

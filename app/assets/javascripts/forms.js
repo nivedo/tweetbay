@@ -36,4 +36,23 @@ $(function() {
     });
     return false;
   });
+
+  $('#populate').click(function(event) {
+    event.preventDefault();
+    $curpart = $(this).closest('fieldset');
+    if(validateInputs($curpart)) {
+      console.log("populate valid");
+      $('#card-title')[0].innerHTML = $('#title').val();
+      $('#buynow-price')[0].innerHTML = '$' + parseFloat($('#price').val()).toFixed(2)
+      $('#buynow-merchant')[0].innerHTML = 'TweetBay'
+      // console.log($('#title').val());
+      // console.log($('#card-title')[0].innerHTML);
+      var bg = $('#media-dropzone').css('background-image');
+      var bg_url = bg.replace('url(','').replace(')','');
+      // console.log(bg);
+      // console.log(bg_url);
+      $('#card-image').attr('src', bg_url);
+      $('.preview-container')[0].style.display = "block";
+    } 
+  });
 })
