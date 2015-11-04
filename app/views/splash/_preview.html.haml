@@ -1,0 +1,33 @@
+.preview-wrap
+  .original-tweet-container.app
+    .original-tweet
+      .stream-item-header
+        %a.account-group{ :href => "#twitter_account" }
+          %img.avatar{ :src => image_url("twitter_avatar.png") }
+          %strong.fullname Tweetbay
+          %span.username
+            %b @tweetbay
+        %small.time
+          %span
+            PREVIEW
+          %a.tweet-timestamp{ :href => "#detail-tweet" }
+      .tweet-wrap
+        %textarea{:type => "text", :placeholder => "Write a message to your followers here! 😎"}
+        //%p.TweetTextSize Buy my new thing!
+      .card-grid
+        .card.image-card.top-card
+          %span.helper
+          %img{ :id => 'card-image', :src => @content.image_src, :alt => "No image :(" }
+        .card.commerce-card.bottom-card
+          .right
+            %button{ :type => "submit", :class => "modal-trigger", "data-toggle" => "modal", "data-target" => "#buyNowModal" } Buy
+          .left
+            %h2.card-title{ :id => "card-title" } #{content.title}
+            .buynow-byline
+              - if content.price
+                %span.buynow-price{ :id => "buynow-price" } #{number_to_currency(content.price, :unit => "$")}
+              - else
+                %span.buynow-price{ :id => "buynow-price" } #{number_to_currency(0, :unit => "$")}
+              %span.buynow-merchant{ :id => "buynow-merchant" } Tweetbay
+        .card-icons
+          %img{ :src => image_url("twitter_icons.png"), :alt => "share" }
