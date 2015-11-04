@@ -1,12 +1,13 @@
 = render "header"
 .top-container
-  %h1 Got followers, hate fees?
+  //%h1 Got followers, hate fees?
+  %h1 Sell anything in a tweet.
 .splash-container
   .content-wrapper
     .tweet-wrap
       = image_tag("tweetbay.jpg", :alt => "Tweetbay")
     .info-wrap
-      %h1 Sell anything directly in a tweet.
+      %h1 Your followers can buy without leaving Twitter.
       = link_to "Sign up with Twitter", twitter_auth_url, :class => "button"
       //%input{:type => "submit", :value => "Get Started"}
 = javascript_include_tag "application"
