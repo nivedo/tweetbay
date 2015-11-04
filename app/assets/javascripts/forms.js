@@ -52,7 +52,9 @@ $(function() {
       // console.log(bg);
       // console.log(bg_url);
       $('#card-image').attr('src', bg_url);
-      $('.preview-container')[0].style.display = "block";
+      // $('.preview-container')[0].style.display = "block";
+      $('#modal-wrapper').toggle();
+      event.stopPropagation();
     }
     return true;
   });
