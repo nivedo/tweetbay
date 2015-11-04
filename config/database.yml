@@ -22,4 +22,14 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  host: localhost
+  adapter: postgresql
+  encoding: utf8
+  database: tweetbay_production
+  pool: 5
+  username: <%= ENV['TWEETBAY_DATABASE_USER'] %>
+  password: <%= ENV['TWEETBAY_DATABASE_PASSWORD'] %>
+
+#production:
+#  <<: *default
+#  database: db/production.sqlite3
