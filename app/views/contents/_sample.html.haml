@@ -20,4 +20,4 @@
         = text_area_tag :description, nil, { :placeholder => "Tell us more.  Why will people love it? 😍", :class => "req" }
       = submit_tag "Preview Tweet", :class => "submit-populate", :id => "populate"
 .preview-container{ :style => "margin-top: 100px; display: none" }
-  = render "contents/preview", :content => @content
+  = render "preview", :content => @content
