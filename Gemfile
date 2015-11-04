@@ -16,8 +16,8 @@ gem 'sqlite3', group: [:development, :test]
 
 group :production do
   gem 'pg'
-  gem 'puma'
-  gem 'rails_12factor'
+  gem 'unicorn'
+  #gem 'rails_12factor'
 end
 
 # Use SCSS for stylesheets
