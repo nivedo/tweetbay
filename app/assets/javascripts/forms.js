@@ -40,7 +40,7 @@ $(function() {
   $('#populate').click(function(event) {
     event.preventDefault();
     $curpart = $(this).closest('fieldset');
-    if(validateInputs($curpart)) {
+    if(!validateInputs($curpart)) {
       console.log("populate valid");
       $('#card-title')[0].innerHTML = $('#title').val();
       $('#buynow-price')[0].innerHTML = '$' + parseFloat($('#price').val()).toFixed(2)
@@ -53,6 +53,7 @@ $(function() {
       // console.log(bg_url);
       $('#card-image').attr('src', bg_url);
       $('.preview-container')[0].style.display = "block";
-    } 
+    }
+    return true;
   });
 })
