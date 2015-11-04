@@ -1,8 +1,10 @@
 .add-product-wrap
   //.input-image#dropzone
   //  Add a photo or image
-  %form#media-dropzone.dropzone{:action => "/image_contents", :enctype => "multipart/form-data", :style => 'background-image: url("' + @content.image_src + '")'}
+  %form#media-dropzone.dropzone{:action => "/image_contents", :enctype => "multipart/form-data"}
     .dz-message{"data-dz-message" => ""}
+      .camera-icon
+      %span Add a photo, image, or meme
     %input{:name => "authenticity_token", :type => "hidden", :value => form_authenticity_token}
     .fallback
       %input{:name => "media", :type => "file"}
@@ -20,5 +22,5 @@
         = text_area_tag :description, nil, { :placeholder => "Tell us more.  Why will people love it? 😍", :class => "req" }
       = submit_tag "Preview Tweet", :class => "submit-populate", :id => "populate"
 .modal-wrapper#modal-wrapper
-  .inner
+  .inner-preview
     = render "preview", :content => @content

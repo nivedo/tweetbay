@@ -46,6 +46,7 @@
     textarea {
       border: none;
       width: 450px;
+      resize: none;
     }
   }
 
@@ -326,6 +327,9 @@
   overflow: hidden;
   border-radius: 6px;
   padding: 0;
+  margin-top: 100px;
+}
+.inner-preview {
   margin-top: 100px;
 }
 .buynow-container {

@@ -98,7 +98,8 @@ input[type="submit"] {
   display:block;
   font-weight: 500;
   height: 100%;
-  width: 100%;
+  padding: 0 20px;
+  //width: 100%;
   line-height: 45px;
   text-decoration: none;
   background-color: $accent-color;
@@ -110,7 +111,7 @@ input[type="submit"] {
   margin-top: 35px;
   text-decoration: none;
   color: white;
-  width: 120px;
+  //width: 120px;
   outline: none;
 
   &:active {
