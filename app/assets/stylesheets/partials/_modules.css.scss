@@ -187,6 +187,12 @@ $padding-width: 15px;
 .preview-right {
   float: left;
   width: 352px;
+
+  .demo-message {
+    display: none;
+    margin-top: 25px;
+    font-weight: 400;
+  }
 }
 
 .profile-header {
@@ -233,7 +239,7 @@ $padding-width: 15px;
   margin: 0 auto;
   width: 900px;
   text-align: center;
-  
+
   .tweet-wrap {
     background-color: white;
     margin: 0 auto;

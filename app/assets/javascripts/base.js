@@ -35,6 +35,12 @@ $(function() {
     $('#modal-wrapper').toggle();
   });
 
+  $('#demo-trigger').click(function(){
+    if(!$('.demo-message').is(":visible")) {
+      $('.demo-message').slideToggle("fast");
+    }
+  });
+
   $('#dropdown-toggle').click(function(){
     $('.dropdown').toggle();
   });
