@@ -1,23 +1,24 @@
-%header
-  .logo
-    %a{:href => root_url} tweet<b>bay</b>
-  .right
-    .navmenu
-      %ul
-        %li
-          .dropdown
-            %ul
-              %li
-                %a.subtle{:href => "#cash"} $0.00
-              %li
-                = link_to "My Profile", profile_url
-              %li
-                = link_to "Logout", logout_url
-          %a{:href => "#", :id => "dropdown-toggle"}
-            .user-menu
-              %span.username @#{current_user.nickname}
-              = image_tag avatar_url(current_user), :class => "tiny-icon"
-        %li
-          = link_to "Orders", orders_url, :class => ( defined?(@active) && @active == "orders" ? "active" : "" )
-        %li
-          = link_to "Products", contents_url, :class => ( defined?(@active) && @active == "products" ? "active" : "" )
+.header
+  .inner
+    .logo
+      %a{:href => root_url} tweet<b>bay</b>
+    .right
+      .navmenu
+        %ul
+          %li
+            .dropdown
+              %ul
+                %li
+                  %a.subtle{:href => "#cash"} $0.00
+                %li
+                  = link_to "My Profile", profile_url
+                %li
+                  = link_to "Logout", logout_url
+            %a{:href => "#", :id => "dropdown-toggle"}
+              .user-menu
+                %span.username @#{current_user.nickname}
+                = image_tag avatar_url(current_user), :class => "tiny-icon"
+          %li
+            = link_to "Orders", orders_url, :class => ( defined?(@active) && @active == "orders" ? "active" : "" )
+          %li
+            = link_to "Products", contents_url, :class => ( defined?(@active) && @active == "products" ? "active" : "" )

@@ -1,14 +1,46 @@
 = render "header"
-.top-container
-  //%h1 Got followers, hate fees?
-  %h1 Sell anything in a tweet.
-.splash-container
-  .content-wrapper
-    .tweet-wrap
-      = image_tag("tweetbay.jpg", :alt => "Tweetbay")
-    .info-wrap
-      %h1 Your followers can buy without leaving Twitter.
-      = link_to "Sign up with Twitter", twitter_auth_url, :class => "button"
-      //%input{:type => "submit", :value => "Get Started"}
-= javascript_include_tag "application"
-
+%section.first
+  .left
+    .top-container
+      //%h1 Got followers, hate fees?
+      %h1.hero Sell anything in a tweet.
+    .splash-container
+      .info-wrap
+        %h2 Your followers can now buy anything without leaving Twitter.
+        = link_to "Sign up with Twitter", twitter_auth_url, :class => "button"
+        //%input{:type => "submit", :value => "Get Started"}
+        .small
+          Not on Twitter yet?  Share on Facebook or Pinterest too!
+  .right
+    .img-wrap
+      %img{:src => image_url("splash-iphone.jpg")}
+%section.second#howitworks
+  .title
+    %h1 Promoting your storefront is hard work.
+    %span With <i>Tweetbay</i>, your followers can help you sell!
+  .point
+    .image
+      %img{:src => image_url("infinity.svg")}
+    .content
+      %h2 Your product is everywhere
+      %span Anyone can buy directly from your tweets or retweets!  It's also easy to share on Facebook and Pinterest.
+  .point
+    .image
+      %img{:src => image_url("creditcard.svg")}
+    .content
+      %h2 One-click payments
+      %span Your buyers don't have to re-enter payments on external sites.  Paying on Twitter is just one click!
+  .point
+    .image
+      %img{:src => image_url("time.svg")}
+    .content
+      %h2 One minute setup
+      %span Whether you're a hobbyist or professional, you can list anything in under a minute!
+%section.third#pricing
+  .title
+    %h1 Simple low price.
+  .subtitle
+    %span 4% + 30¢ per transaction.  
+    %p No hidden or monthly fees.
+    = link_to "Get Started", twitter_auth_url, :class => "button"
+  = javascript_include_tag "application"

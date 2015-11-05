@@ -1,10 +1,11 @@
-%header
-  .logo
-    %a{:href => root_url} tweet<b>bay</b>
-  %ul
-    %li
-      = link_to "Log in", twitter_auth_url, :class => "open-button"
-    %li
-      = link_to "Pricing", aboutus_url, :class => ( defined?(aboutus) ? "active" : "" )
-    %li
-      = link_to "How It Works", howitworks_url, :class => ( defined?(howitworks) ? "active" : "" )
+.header.sticky
+  .inner
+    .logo
+      %a{:href => root_url} tweet<b>bay</b>
+    %ul
+      %li
+        = link_to "Log in", twitter_auth_url, :class => "open-button"
+      %li
+        = link_to "Pricing", "#pricing", :class => ( defined?(aboutus) ? "active" : "" )
+      %li
+        = link_to "How It Works", "#howitworks", :class => ( defined?(howitworks) ? "active" : "" )
